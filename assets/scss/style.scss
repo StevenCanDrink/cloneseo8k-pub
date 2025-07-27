@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "base.scss";
+@import "variable.scss";
+@import "breakpoints";
+@import "swiper.scss";
+@import "header.scss";
+@import "product__game.scss";
+@import "jackpot.scss";
+@import "hero__bottom.scss";
+@import "performance-indicators.scss";
+@import "download-app.scss";
+@import "footer.scss";
+
+body {
+  font-size: var(--text-base);
+  color: var(--text-white);
+  font-family: "Roboto", system-ui, "Segoe UI", "Open Sans", "Helvetica Neue", sans-serif;
+  height: auto;
+  overflow-x: hidden;
+}
+#back-to-top {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 15px;
+  right: 20px;
+  z-index: 1000;
+  border: 2px solid #fff;
+  cursor: pointer;
+  visibility: hidden;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+  i {
+    color: #fff;
+    font-size: 20px;
+  }
+  &:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+  }
+}
+
+.back-to-top-show {
+  animation: back-to-top 0.5s ease-in-out forwards;
+}
+.back-to-top-hide {
+  animation: back-to-top-hide 0.5s ease-in-out forwards;
+}
+
+@keyframes back-to-top {
+  from {
+    visibility: hidden;
+    transform: translateY(50px);
+  }
+  to {
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+@keyframes back-to-top-hide {
+  from {
+    visibility: visible;
+    transform: translateY(0);
+  }
+  to {
+    visibility: hidden;
+    transform: translateY(50px);
+  }
+}
+
+.btn__primary {
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 0;
+  box-sizing: border-box;
+  color: currentColor;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.97em;
+  font-weight: bolder;
+  letter-spacing: 0.03em;
+  line-height: 2.4em;
+  margin-top: 0;
+  max-width: 100%;
+  min-height: 2.5em;
+  padding: 0px 40px 0px 40px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  text-shadow: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  vertical-align: middle;
+  border-radius: 99px;
+
+  &:hover {
+    filter: brightness(1.5);
+  }
+}
+
+.container-app {
+  max-width: 1170px;
+  margin-inline: auto;
+  width: 100%;
+}

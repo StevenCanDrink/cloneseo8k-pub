@@ -1,0 +1,158 @@
+.product--game {
+  background-color: var(--bg-black);
+  padding-block: 30px;
+  h2 {
+    text-align: center;
+    font-size: 2.3rem;
+    font-weight: 800;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    span {
+      color: var(--primary);
+    }
+  }
+
+  .wrapper__group-img {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    max-width: 1360px;
+    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding-inline: 9px;
+    margin-bottom: 10px;
+    img {
+      max-width: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  .wrapper__box {
+    margin-bottom: 30px;
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .box {
+      margin-inline: 15px;
+      border: 2px solid var(--primary);
+      padding: 15px;
+      box-shadow: 0 2px 30px var(--primary);
+      border-radius: 10px;
+      word-wrap: break-word;
+      height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+      max-height: 580px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      a {
+        color: var(--primary);
+        font-weight: 900;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          color: #f9f929;
+        }
+      }
+
+      ul {
+        list-style: outside;
+        padding-left: 20px;
+        width: 100%;
+        margin-bottom: 10px;
+        li {
+          width: 100%;
+          padding: 8px 0;
+        }
+      }
+
+      h3 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--primary);
+        margin-bottom: 10px;
+      }
+      img {
+        align-self: center;
+        max-width: 100%;
+        object-fit: cover;
+      }
+      figcaption {
+        font-style: italic;
+        font-size: 1.4rem;
+        text-align: center;
+      }
+
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: var(--primary);
+        border-radius: 50px;
+      }
+    }
+  }
+}
+
+.card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  cursor: grab;
+  .wrapper__img {
+    position: relative;
+    .badge {
+      position: absolute;
+      top: 14%;
+      left: 0;
+      border: 2px solid var(--primary);
+      max-width: max-content;
+      text-align: center;
+      padding-inline: 5px;
+      background-color: white;
+      color: var(--primary);
+      transition: all 0.3s ease-in-out;
+      h4 {
+        font-weight: 900;
+        line-height: none;
+      }
+    }
+    &:hover {
+      .badge {
+        background-color: var(--primary);
+        color: white;
+      }
+    }
+  }
+}
+
+@include respond-min($breakpoint-md) {
+  .product--game {
+    .wrapper__group-img {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+}
+@include respond-min($breakpoint-lg) {
+  .product--game {
+    .wrapper__box {
+      margin-bottom: 30px;
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+    .card {
+      padding-bottom: 50px;
+    }
+  }
+}

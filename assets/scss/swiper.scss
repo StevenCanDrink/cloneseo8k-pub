@@ -1,0 +1,79 @@
+/* Config swiper */
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: transparent;
+  border-radius: 100%;
+  color: white;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline: 60px;
+  border: 2px solid white;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  &::after {
+    color: white;
+    font-size: 15px;
+    font-weight: 900;
+  }
+  &:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    &::after {
+      color: white;
+    }
+  }
+}
+.swiper-button-next {
+  transform: translateX(50px);
+}
+.swiper-button-prev {
+  transform: translateX(-50px);
+}
+.swiper,
+.swiper-box,
+.swiper-hero-bottom {
+  &:hover {
+    .swiper-button-next,
+    .swiper-button-prev {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+.swiper-box {
+  position: relative;
+}
+.swiper-pagination {
+  display: none;
+  @include respond-min($breakpoint-lg) {
+    display: block;
+    .swiper-pagination-bullet {
+      width: 13px;
+      height: 13px;
+      background-color: transparent;
+      border: 3px solid white;
+      opacity: 0.8;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    .swiper-pagination-bullet-active {
+      background-color: var(--primary);
+      border-color: var(--primary);
+    }
+  }
+}
+.swiper-jackpot {
+  &:hover {
+    .jackpot-prev,
+    .jackpot-next {
+      transform: translateY(80px);
+      opacity: 1;
+    }
+  }
+}
+
+/* Config swiper */

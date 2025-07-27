@@ -1,0 +1,199 @@
+$primary: #777777;
+
+.jackpot {
+  background-color: $primary;
+  width: 100%;
+  position: relative;
+  &::after {
+    display: none;
+    content: "";
+    background: black;
+    position: absolute;
+    left: 0;
+    height: 90px;
+    width: 100%;
+  }
+  .group__jackpot--wrapper {
+    width: 100%;
+
+    .jackpot--left {
+      .image__group--left {
+        display: none;
+      }
+
+      .group--left {
+        text-align: center;
+        margin-bottom: 10px;
+        h4 {
+          font-size: 3.2rem;
+          font-weight: bolder;
+          color: white;
+          text-transform: uppercase;
+        }
+        h3 {
+          font-size: 4.8rem;
+          font-weight: bolder;
+          color: var(--secondary);
+        }
+        p {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .jackpot--right {
+      margin-top: 20px;
+      width: 100%;
+
+      position: relative;
+      overflow: hidden;
+      .swiper-jackpot-item {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        justify-items: center;
+        height: 200px;
+        img {
+          width: 50px;
+        }
+        .group__right {
+          font-weight: 900;
+          text-transform: capitalize;
+          :first-child {
+            margin-bottom: 10px;
+            color: var(--secondary);
+          }
+        }
+      }
+    }
+  }
+}
+// @include respond-min($breakpoint-xl) {
+//   .jackpot {
+//     .group__jackpot--wrapper {
+//       .jackpot--right {
+//         width: max-content;
+//         margin: 0 auto;
+//         .swiper {
+//           max-width: 400px;
+//           width: 100%;
+//           margin: 0 auto;
+//         }
+//       }
+//     }
+//   }
+// }
+// @include respond-min($breakpoint-lg) {
+//   .jackpot {
+//     &::after {
+//       top: -5px;
+//     }
+//     .group__jackpot--wrapper {
+//       width: 90%;
+//       margin: 0 auto;
+//       .jackpot--left {
+//         img {
+//           width: 200px;
+//         }
+//       }
+//       .jackpot--right {
+//         .swiper {
+//           max-width: 400px;
+//           width: 100%;
+//           margin: 0 auto;
+//         }
+//       }
+//     }
+//   }
+// }
+
+@include respond-min($breakpoint-md) {
+  .jackpot {
+    padding: 30px 0;
+    &::after {
+      top: -10px;
+      display: block;
+    }
+    .group__jackpot--wrapper {
+      padding-inline: 10px;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      .jackpot--left {
+        display: flex;
+        z-index: 2;
+        .image__group--left {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .group--left {
+          padding-top: 50px;
+          padding-inline: 30px;
+          position: relative;
+          margin: 0;
+          h4 {
+            font-size: 2rem;
+          }
+          h3 {
+            font-size: 3rem;
+          }
+          &::after {
+            content: "";
+            border-right: 1px dotted #ccc;
+            position: absolute;
+            transform: translateY(-50%);
+            top: calc(50% + 20px);
+            right: 0;
+            height: 60%;
+            width: 1px;
+          }
+        }
+      }
+      .jackpot--right {
+        margin-top: 0;
+        max-width: 400px;
+      }
+    }
+  }
+}
+
+@include respond-min($breakpoint-lg) {
+  .jackpot {
+    .group__jackpot--wrapper {
+      position: relative;
+
+      gap: 30px;
+      align-items: center;
+      justify-items: center;
+      .jackpot--left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .group--left {
+          position: relative;
+          padding-inline: 80px;
+          margin: 0;
+          h4 {
+            font-size: 3.2rem;
+          }
+          h3 {
+            font-size: 4.8rem;
+          }
+
+          > * + * {
+            margin-top: 10px;
+          }
+        }
+
+        ::after {
+          display: block;
+        }
+      }
+      .jackpot--right {
+        max-width: 450px;
+      }
+    }
+  }
+}

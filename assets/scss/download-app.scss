@@ -1,0 +1,57 @@
+$bg-color: #1d1d1d;
+
+.download--app {
+  width: 100%;
+  height: auto;
+  background-color: $bg-color;
+  padding-top: 30px;
+  .wrapper {
+    padding-inline: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    .item__img {
+      width: 50%;
+    }
+    .item__group {
+      > * + * {
+        margin-top: 15px;
+      }
+      p {
+        line-height: 1.75;
+      }
+      h2 {
+        font-size: 1.9rem;
+        font-weight: 800;
+        text-transform: capitalize;
+        color: var(--secondary);
+      }
+    }
+  }
+}
+
+@include respond-min($breakpoint-md) {
+  .download--app {
+    .wrapper {
+      flex-direction: row;
+      .item__img,
+      .item__group {
+        flex: 1;
+      }
+      .item__img {
+        img {
+          width: 50%;
+          margin: 0 auto;
+          object-fit: cover;
+        }
+      }
+      .item__group {
+        h2 {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+}
