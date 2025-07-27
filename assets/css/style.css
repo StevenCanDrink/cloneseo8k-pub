@@ -525,6 +525,10 @@ button::-moz-focus-inner {
   max-width: 100%;
   object-fit: cover;
   width: 100%;
+  transition: filter 0.3s ease-in-out;
+}
+.product--game .wrapper__group-img img:hover {
+  filter: brightness(1.2);
 }
 .product--game .wrapper__box {
   margin-bottom: 30px;
@@ -697,11 +701,20 @@ button::-moz-focus-inner {
 .jackpot .group__jackpot--wrapper .jackpot--right .swiper-jackpot-item img {
   width: 50px;
 }
-.jackpot .group__jackpot--wrapper .jackpot--right .swiper-jackpot-item .group__right {
+.jackpot
+  .group__jackpot--wrapper
+  .jackpot--right
+  .swiper-jackpot-item
+  .group__right {
   font-weight: 900;
   text-transform: capitalize;
 }
-.jackpot .group__jackpot--wrapper .jackpot--right .swiper-jackpot-item .group__right :first-child {
+.jackpot
+  .group__jackpot--wrapper
+  .jackpot--right
+  .swiper-jackpot-item
+  .group__right
+  :first-child {
   margin-bottom: 10px;
   color: var(--secondary);
 }
@@ -1070,7 +1083,8 @@ footer .end-bottom {
 body {
   font-size: var(--text-base);
   color: var(--text-white);
-  font-family: "Roboto", system-ui, "Segoe UI", "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Roboto", system-ui, "Segoe UI", "Open Sans", "Helvetica Neue",
+    sans-serif;
   height: auto;
   overflow-x: hidden;
 }
